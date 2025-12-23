@@ -676,26 +676,41 @@
     <h3>Accelerated CFD Modeling of a Deep Freezer Using a 2.5D Approach</h3>
 
     <p style="color:#555; line-height:1.7; margin-bottom:15px;">
-    This project focuses on developing a 2.5D CFD approach to efficiently model the long-term transient thermal behavior of a deep freezer using ANSYS Fluent. Fully three-dimensional transient simulations, especially those extending over 24–36 hours, can require weeks of computational time, and the inclusion of phase change materials (PCM) further increases the numerical cost, limiting their practical use in engineering studies.
+        This project presents a 2.5D CFD modeling approach developed to enable fast and computationally efficient transient thermal analysis of a deep freezer using ANSYS Fluent. Fully three-dimensional transient simulations, particularly for long operating periods (24–36 hours), may require weeks of computational time. The inclusion of phase change materials (PCM) further increases this cost, making such analyses impractical for extensive engineering studies.
     </p>
 
-    <p style="color:#555; line-height:1.7;">
-    To overcome this limitation, the proposed 2.5D approach incorporates the effects of the third dimension into a two-dimensional framework through appropriate geometric and thermal adjustments. Transient simulations demonstrated that key performance indicators, such as compressor on–off cycles, remain in close agreement with the 3D reference model while achieving significantly reduced solution times. In PCM-integrated cases, the 2.5D model provided approximately a 14-fold reduction in computational time, enabling fast and effective parametric analyses.
+    <p style="color:#555; line-height:1.7; margin-bottom:25px;">
+        To address this limitation, the proposed 2.5D approach incorporates the influence of the third dimension into a two-dimensional framework through appropriate geometric and thermal adjustments. Transient simulations showed that key system behaviors, such as compressor on–off cycles, are captured with good agreement compared to the 3D reference model, while achieving substantially reduced solution times. For PCM-integrated scenarios, the 2.5D model provided approximately a fourteen-fold reduction in computational cost, enabling rapid and effective parametric investigations.
     </p>
 
-    <!-- Image placeholder -->
+    <!-- Image 1 -->
     <div style="margin-top: 20px;">
-        <img src="main_project_placeholder.png"
-             alt="2.5D CFD model of deep freezer cabinet"
+        <img src="3-Boyut_senaryo7.jpg"
+             alt="Average evaporator temperature comparison between 3D and 2.5D models"
              style="width: 100%; border-radius: 10px;">
     </div>
 
-    <p style="font-size: 0.9rem; color: #777; margin-top: 10px;">
-        Representative temperature field obtained from the 2.5D transient CFD model.
+    <p style="font-size: 0.9rem; color: #777; margin-top: 8px;">
+        Comparison of average evaporator temperatures between the 3D model and Scenario 7 (without PCM).
     </p>
 
-</div>
+    <!-- Image 2 -->
+    <div style="margin-top: 25px;">
+        <img src="image_2.png"
+             alt="Average evaporator temperature comparison between 3D and 2.5D models"
+             style="width: 100%; border-radius: 10px;">
+    </div>
 
+    <p style="font-size: 0.9rem; color: #777; margin-top: 8px;">
+        PCM-integrated analysis: comparison of average evaporator temperatures between the 3D model and Scenario 10.
+    </p>
+
+    <!-- Final conclusion -->
+    <p style="color:#555; line-height:1.7; margin-top:25px;">
+        Overall, the 2.5D approach proved capable of accurately predicting the general thermal behavior of the deep freezer with only minor deviations from the full 3D model. Rather than relying directly on computationally expensive 3D simulations for all scenarios, the results demonstrate that performing rapid and comprehensive preliminary assessments using 2.5D models, followed by targeted 3D analyses for selected cases, offers a highly efficient strategy in terms of both computational time and engineering resources.
+    </p>
+
+    </div>
         <!-- Stefan Problem Project -->
         <div class="research-card" style="max-width: 900px; margin: 0 auto; border-top: 4px solid var(--secondary);">
             <h3>Phase Change Model Validation for CFD Applications</h3>
