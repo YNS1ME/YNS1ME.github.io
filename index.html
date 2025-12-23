@@ -666,6 +666,7 @@
             </div>
         </div>
     </section>
+
 <!-- Project Highlights -->
 <section class="animate-on-scroll">
     <div class="container">
@@ -683,27 +684,35 @@
         To address this limitation, the proposed 2.5D approach incorporates the influence of the third dimension into a two-dimensional framework through appropriate geometric and thermal adjustments. Transient simulations showed that key system behaviors, such as compressor on–off cycles, are captured with good agreement compared to the 3D reference model, while achieving substantially reduced solution times. For PCM-integrated scenarios, the 2.5D model provided approximately a fourteen-fold reduction in computational cost, enabling rapid and effective parametric investigations.
     </p>
 
-    <!-- Image 1 -->
-    <div style="margin-top: 20px;">
+<!-- Images: 3D vs 2.5D Comparisons -->
+<div style="
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+">
+
+    <!-- Image 1: Without PCM -->
+    <div style="flex: 1; min-width: 280px;">
         <img src="3-Boyut_senaryo7.jpg"
-             alt="Average evaporator temperature comparison between 3D and 2.5D models"
+             alt="Average evaporator temperature comparison between 3D and 2.5D models (without PCM)"
              style="width: 100%; border-radius: 10px;">
+        <p style="font-size: 0.9rem; color: #777; margin-top: 8px;">
+            Comparison of average evaporator temperatures between the 3D model and Scenario 7 (without PCM).
+        </p>
     </div>
 
-    <p style="font-size: 0.9rem; color: #777; margin-top: 8px;">
-        Comparison of average evaporator temperatures between the 3D model and Scenario 7 (without PCM).
-    </p>
-
-    <!-- Image 2 -->
-    <div style="margin-top: 25px;">
+    <!-- Image 2: With PCM -->
+    <div style="flex: 1; min-width: 280px;">
         <img src="3-Boyut_senaryo10.jpg"
-             alt="Average evaporator temperature comparison between 3D and 2.5D models"
+             alt="Average evaporator temperature comparison with PCM"
              style="width: 100%; border-radius: 10px;">
+        <p style="font-size: 0.9rem; color: #777; margin-top: 8px;">
+            PCM-integrated analysis: comparison of average evaporator temperatures between the 3D model and Scenario 10.
+        </p>
     </div>
 
-    <p style="font-size: 0.9rem; color: #777; margin-top: 8px;">
-        PCM-integrated analysis: comparison of average evaporator temperatures between the 3D model and Scenario 10.
-    </p>
+</div>
 
     <!-- Final conclusion -->
     <p style="color:#555; line-height:1.7; margin-top:25px;">
