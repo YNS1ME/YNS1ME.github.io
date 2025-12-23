@@ -666,6 +666,58 @@
             </div>
         </div>
     </section>
+<!-- Project Highlights -->
+<section class="animate-on-scroll">
+    <div class="container">
+        <h2 class="section-title">Project Highlights</h2>
+
+        <!-- Stefan Problem Project -->
+        <div class="research-card" style="max-width: 900px; margin: 0 auto; border-top: 4px solid var(--secondary);">
+            <h3>1D Phase Change Modeling – Stefan Problem</h3>
+
+            <p style="margin-bottom: 15px; color: #555;">
+                One-dimensional solidification of a phase change material was analyzed using
+                an analytical Stefan problem formulation and validated with transient CFD results
+                obtained from ANSYS Fluent.
+            </p>
+
+            <video
+                src="stefan_pcm.mp4"
+                controls
+                autoplay
+                loop
+                muted
+                playsinline
+                style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+            </video>
+
+            <p style="font-size: 0.9rem; color: #777; margin-bottom: 20px;">
+                Temperature distribution and solid–liquid interface evolution over time.
+            </p>
+
+            <details>
+                <summary style="cursor: pointer; font-weight: 600; color: var(--secondary);">
+                    View technical details & MATLAB code
+                </summary>
+
+                <p style="margin-top: 15px; color: #555;">
+                    The analytical solution is based on the classical Stefan problem formulation
+                    presented in Hahn & Özışık, <em>Heat Conduction</em>. The moving solid–liquid interface
+                    is obtained by solving the energy balance at the phase boundary.
+                </p>
+
+                <pre style="background: #f4f4f4; padding: 20px; border-radius: 10px; overflow-x: auto; margin-top: 15px;">
+<code>
+% Analytical solution of the 1D Stefan problem
+s_t = 2 * lambda * sqrt(alfa_s * t);
+</code>
+                </pre>
+            </details>
+        </div>
+
+        <!-- Future projects can be added here -->
+    </div>
+</section>
 
     <!-- Leadership & Activities -->
     <section class="animate-on-scroll" style="background: #f8f9fa; padding-bottom: 80px;">
