@@ -697,19 +697,29 @@
 
            <details>
     <summary style="cursor: pointer; font-weight: 600; color: var(--secondary);">
-        Project details & MATLAB code
+        Project details & full MATLAB code
     </summary>
 
+    <!-- Short project summary -->
     <ul style="margin-top: 15px; margin-left: 20px; color: #555; line-height: 1.6;">
         <li>Analytical solution of the 1D Stefan problem for phase change modeling</li>
-        <li>Closed-form temperature distributions obtained using <code>erf</code> / <code>erfc</code></li>
-        <li>Moving solid–liquid interface computed analytically and compared with CFD results</li>
-        <li>Numerical validation performed using transient ANSYS Fluent simulations</li>
+        <li>Solid–liquid interface position obtained from the classical Stefan formulation</li>
+        <li>Closed-form temperature distributions using <code>erf</code> / <code>erfc</code></li>
+        <li>Analytical results compared with transient CFD simulations (ANSYS Fluent)</li>
+        <li>Results visualized over the physically active region of the domain (cm scale)</li>
     </ul>
 
-    <pre style="background: #f4f4f4; padding: 18px; border-radius: 10px; overflow-x: auto; margin-top: 15px;">
+    <!-- Full MATLAB code -->
+    <p style="margin-top: 15px; font-weight: 600; color: var(--secondary);">
+        View full MATLAB code
+    </p>
+
+    <pre style="background: #f4f4f4; padding: 20px; border-radius: 10px;
+                overflow-x: auto; margin-top: 10px; font-size: 0.85rem;">
 <code>
-%% Thermophysical properties
+clear;
+
+%% Thermal properties
 T_m   = -10;        % Phase change temperature [°C]
 T_0   = -18;        % Boundary temperature [°C]
 T_i   =  27;        % Initial temperature [°C]
@@ -728,7 +738,7 @@ C_p_l = 3.4e3;      % Specific heat (liquid) [J/kgK]
 alfa_s = k_s / (rho_s * C_p_s);
 alfa_l = k_l / (rho_l * C_p_l);
 
-%% Stefan parameter (lambda) calculation
+%% Stefan parameter (lambda)
 func = @(lambda) ...
     (exp(-lambda^2) / erf(lambda)) + ...
     (k_l / k_s) * sqrt(alfa_s / alfa_l) * ...
@@ -739,12 +749,33 @@ func = @(lambda) ...
 
 lambda = fzero(func, [1e-4 5]);
 
-%% Solid–liquid interface position (Stefan solution)
-s_t = 2 * lambda * sqrt(alfa_s * t);
+%% Spatial and temporal discretization
+dx = 0.001;
+dt = 1;
 
-%% Temperature distribution (solid region)
-T_s = ((T_m - T_0) .* erf(x ./ (2 * sqrt(alfa_s * t)))) ...
-      / erf(lambda) + T_0;
+x = 0:dx:1;
+t = 1:dt:100000;
+
+T = zeros(1, length(x));
+
+%% Analytical solution loop
+for ti = 1:length(t)
+
+    s_t = 2 * lambda * sqrt(alfa_s * t(ti));
+
+    for xi = 1:length(x)
+        if x(xi) < s_t
+            T(xi) = ((T_m - T_0) * ...
+                     erf(x(xi) / (2 * sqrt(alfa_s * t(ti))))) ...
+                     / erf(lambda) + T_0;
+        else
+            T(xi) = ((T_m - T_i) * ...
+                     erfc(x(xi) / (2 * sqrt(alfa_l * t(ti))))) ...
+                     / erfc(lambda * sqrt(alfa_s / alfa_l)) + T_i;
+        end
+    end
+
+end
 </code>
     </pre>
 </details>
