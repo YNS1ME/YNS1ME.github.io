@@ -213,7 +213,11 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        .skill-list.compact {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px;
+        }
         .skill-category:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
@@ -566,22 +570,20 @@
                         <span class="skill-tag">Microsoft Office Suite</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--secondary)"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
-                        Core Competencies
-                    </h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Heat Exchanger Design</span>
-                        <span class="skill-tag">Thermal Analysis</span>
-                        <span class="skill-tag">CFD</span>
-                        <span class="skill-tag">Heat Transfer</span>
-                        <span class="skill-tag">Thermodynamics</span>
-                        <span class="skill-tag">Fluid Mechanics</span>
-                        <span class="skill-tag">Phase Change Materials</span>
-                        <span class="skill-tag">Cooling System Optimization</span>
-                        <span class="skill-tag">3D to 2D Model Reduction</span>
-                    </div>
+        <div class="skill-category">
+            <h3>Core Competencies</h3>
+
+        <div class="skill-list compact">
+                <span class="skill-tag">Heat Transfer</span>
+                <span class="skill-tag">Thermodynamics</span>
+                <span class="skill-tag">Fluid Mechanics</span>
+                <span class="skill-tag">CFD</span>
+                <span class="skill-tag">Heat Exchanger Design</span>
+                <span class="skill-tag">Thermal Analysis</span>
+                <span class="skill-tag">Phase Change Materials</span>
+                <span class="skill-tag">Cooling System Optimization</span>
+                <span class="skill-tag">3D → 2D / 2.5D Model Reduction</span>
+                </div>
                 </div>
                 <div class="skill-category">
                     <h3>
