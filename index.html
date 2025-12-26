@@ -693,14 +693,30 @@
 
 <!-- Images: 3D vs 2.5D Comparisons -->
 <div style="
+    position: relative;
     display: flex;
     gap: 20px;
     margin-top: 25px;
     flex-wrap: wrap;
 ">
 
+    <!-- Overlay image (centered) -->
+    <img src="3D_2D.jpg"
+         alt="3D vs 2D Comparison"
+         style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 220px;
+            width: 40%;
+            opacity: 0.95;
+            z-index: 2;
+            pointer-events: none;
+         ">
+
     <!-- Image 1: Without PCM -->
-    <div style="flex: 1; min-width: 280px;">
+    <div style="flex: 1; min-width: 280px; z-index: 1;">
         <img src="3-Boyut_senaryo7.jpg"
              alt="Average evaporator temperature comparison between 3D and 2.5D models (without PCM)"
              style="width: 100%; border-radius: 10px;">
@@ -710,7 +726,7 @@
     </div>
 
     <!-- Image 2: With PCM -->
-    <div style="flex: 1; min-width: 280px;">
+    <div style="flex: 1; min-width: 280px; z-index: 1;">
         <img src="3-Boyut_senaryo10.jpg"
              alt="Average evaporator temperature comparison with PCM"
              style="width: 100%; border-radius: 10px;">
